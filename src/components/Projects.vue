@@ -4,16 +4,17 @@
     <v-row>
       <v-col class="d-flex justify-center align-center px-2 flex-wrap">
         <div v-for="project in projects" :key="project.name">
-          <h3 class="white--text text--accent-2 text-center mt-4 text-h6">
+          <h3 class="white--text text-center mt-4 text-h6">
             {{ project.name }}
           </h3>
           <v-hover v-slot="{ hover }" class="mt-4">
             <v-card
               :elevation="hover ? 12 : 2"
-              class="mx-auto"
+              class="mx-auto mr-1"
               height="300"
               max-width="300"
               width="300"
+              dark
               :img="project.picture"
             >
               <v-expand-transition>
@@ -25,7 +26,7 @@
                   <span class="pb-6 white--text font-weight-bold">{{
                     project.description
                   }}</span>
-                  <v-btn color="blue darken-3 white--text font-weight-bold"
+                  <v-btn color="teal lighten-1 white--text font-weight-bold"
                     >Conhecer</v-btn
                   >
                 </div>

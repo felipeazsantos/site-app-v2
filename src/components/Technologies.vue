@@ -10,8 +10,9 @@
               :key="technologie.name"
             >
               <v-sheet
+                dark
                 outlined
-                elevation="4"
+                elevation="8"
                 class="d-flex flex-column justify-center align-center py-6 px-10"
                 :style="'border-bottom: 4px solid ' + technologie.color"
               >
@@ -39,32 +40,32 @@ export default {
       technologies: [
         {
           name: "Vue.js",
-          color: "#54AE54",
+          color: "#26A69A",
           picture: require("@/assets/vuejs.png"),
         },
         {
           name: "React.js",
-          color: "#AB2353",
+          color: "#29B6F6",
           picture: require("@/assets/reactjs.png"),
         },
         {
           name: "Node.js",
-          color: "#22DDFF",
+          color: "#43A047",
           picture: require("@/assets/nodejs.png"),
         },
         {
           name: "Java",
-          color: "#2252FF",
+          color: "#FFA726",
           picture: require("@/assets/java.png"),
         },
         {
           name: "Golang",
-          color: "#22FF12",
+          color: "#1E88E5",
           picture: require("@/assets/golang.png"),
         },
         {
           name: "Typescript",
-          color: "#FF2342",
+          color: "#8C9EFF",
           picture: require("@/assets/typescript.png"),
         },
       ],
