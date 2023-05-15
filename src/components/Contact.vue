@@ -1,12 +1,13 @@
 <template>
     <div>
       <SectionTitle title="Contato" id="contact" />
-       <v-card class="pa-2 mt-2" dark>
+       <v-card class="mt-2 pa-2" shaped outlined dark>
         <form @submit.prevent="submit">
             <v-container>
               <v-row no-gutters>
                 <v-col cols="12">
                   <v-text-field
+                    v-model="name"
                     label="Nome"
                     placeholder="Infomr seu nome"
                     outlined
@@ -17,6 +18,7 @@
               <v-row no-gutters>
                 <v-col cols="12">
                   <v-text-field
+                    v-model="email"
                     label="E-mail"
                     placeholder="Infomr seu e-mail"
                     outlined
@@ -27,7 +29,7 @@
               <v-row no-gutters>
                 <v-col cols="12">
                    <v-textarea
-                    label="Mensagem:"
+                    label="Mensagem"
                     outlined
                     placeholder="Escreva a sua mensagem, assim que receber respondo :D"
                     v-model="message"
@@ -40,10 +42,12 @@
                    <v-btn
                       class="mr-2 teal lighten-1 white--text font-weight-bold"
                       type="submit"
+                      @click="clear"
                     >
                       Enviar
                     </v-btn>
-                    <v-btn class="teal lighten-1 white--text font-weight-bold">
+                    <v-btn class="teal lighten-1 white--text font-weight-bold"
+                      @click="clear">
                       Limpar dados
                     </v-btn>
                 </v-col>
@@ -61,7 +65,16 @@ export default {
   components: {SectionTitle},
   data() {
     return {
+      name: '',
+      email: '',
       message: ''
+    }
+  },
+  methods: {
+    clear() {
+      this.name = '';
+      this.email = '';
+      this.message = '';
     }
   }
 

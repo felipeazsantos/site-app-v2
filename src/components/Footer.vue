@@ -1,5 +1,5 @@
 <template>
-    <div class="grey--text text--darken-1 text-caption text-center">
+    <div class="white--text text-caption">
         © Desenvolvido por Felipe Azevedo dos Santos
     </div>
 </template>

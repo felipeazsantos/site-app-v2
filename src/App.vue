@@ -1,6 +1,10 @@
 <template>
    <v-app>
-    <v-navigation-drawer app permanent expand-on-hover mini-variant dark>
+    <v-navigation-drawer 
+      v-model="drawer"
+      app 
+      dark
+      right>
 
       <v-list dense nav>
         <v-list-item v-for="item in items" :key="item.title" link :href="item.link">
@@ -17,11 +21,18 @@
       </v-list>
     </v-navigation-drawer>
 
+    <v-app-bar app dark absolute>
+      <v-spacer></v-spacer>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+    </v-app-bar>
+
     <v-main class="main-container">
-      <router-view />
+      <v-container>
+        <router-view />
+      </v-container>
     </v-main>
 
-    <v-footer app>
+    <v-footer app dark>
       <Footer />
     </v-footer>
 

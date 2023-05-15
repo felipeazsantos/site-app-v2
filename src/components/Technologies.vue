@@ -2,8 +2,8 @@
   <div>
       <SectionTitle title="Principais tecnologias que trabalho" id="technologies" />
       <v-row>
-        <v-col xs="12">
-          <ul class="technologies-list">
+        <v-col cols="12" xs="12">
+          <ul class="technologies-container d-flex justify-center align-center flex-wrap pa-0">
             <li
               class="technologies-items"
               v-for="technologie in technologies"
@@ -14,6 +14,7 @@
                 outlined
                 elevation="8"
                 class="d-flex flex-column justify-center align-center py-6 px-10"
+                :class="{'mr-1': mobileScreen}"
                 :style="'border-bottom: 4px solid ' + technologie.color"
               >
                 <img
@@ -37,6 +38,8 @@ export default {
   components: { SectionTitle },
   data() {
     return {
+      windowWidth: window.innerWidth,            
+      mobileScreen: false,
       technologies: [
         {
           name: "Vue.js",
@@ -71,18 +74,24 @@ export default {
       ],
     };
   },
+  mounted() {
+    if (this.windowWidth > 600) {
+          this.mobileScreen = true
+      }
+    }
 };
 </script>
 
 <style>
-.technologies-list {
+.technologies-container {
   list-style-type: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-sizing: border-box;
 }
 
 .technologies-items {
-  padding: 12px 12px;
+  padding: 2px 2px;
+  margin-bottom: 10px;
 }
+
+
 </style>

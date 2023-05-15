@@ -3,11 +3,10 @@
     <SectionTitle title="Minha trajetória profissional" id="worketAt" />
     <v-row>
       <v-col>
-        <v-timeline dark>
+        <v-timeline dark dense>
           <v-timeline-item
-            v-for="(company, index) in companiesWorked"
+            v-for="(company) in companiesWorked"
             :key="company.name"
-            :class="{ 'text-right': index % 2 == 1 }"
             color="teal lighten-1"
           >
             <h3
@@ -58,6 +57,7 @@ export default {
   components: { SectionTitle },
   data() {
     return {
+      windowWidth: window.innerWidth,
       companiesWorked: [
         {
           name: "CWS Digital",

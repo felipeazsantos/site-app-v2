@@ -1,11 +1,11 @@
 <template>
-    <v-container class="mt-16 px-16">
-      <About class="mb-16" />
-      <Technologies class="mb-16" />
-      <WorketAt class="mb-16" />
-      <Projects class="mb-16" />
-      <Contact class="mb-16" />
-    </v-container>
+  <v-container>
+      <About class="mb-14" />
+      <Technologies class="mb-14" />
+      <WorketAt class="mb-14" />
+      <Projects class="mb-14" />
+      <Contact class="mb-14" />
+  </v-container>
 </template>
 
 <script>
